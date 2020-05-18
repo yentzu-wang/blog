@@ -35,12 +35,12 @@ const addBlogPost = dispatch => {
       }
     })
 
-    callback()
+    callback && callback()
   }
 }
 
 const editBlogPost = dispatch => {
-  return (id, title, content) => {
+  return (id, title, content, callback) => {
     dispatch({
       type: "edit_blogpost",
       payload: {
@@ -49,6 +49,8 @@ const editBlogPost = dispatch => {
         content
       }
     })
+
+    callback && callback()
   }
 }
 
